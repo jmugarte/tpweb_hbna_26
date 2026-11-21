@@ -1,16 +1,37 @@
 {
-  "rewrites": [
+  "builds": [
     {
-      "source": "/api/(.*)",
-      "destination": "/backend_portal/wsgi.py"
+      "src": "backend_portal/wsgi.py",
+      "use": "@vercel/python"
     },
     {
-      "source": "/static/(.*)",
-      "destination": "/backend_portal/wsgi.py"
+      "src": "client_portal/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "^/api/(.*)",
+      "dest": "backend_portal/wsgi.py"
     },
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "src": "^/static/(.*)",
+      "dest": "backend_portal/wsgi.py"
+    },
+    {
+      "src": "^/assets/(.*)",
+      "dest": "client_portal/dist/assets/$1"
+    },
+    {
+      "src": "^/(.*\\..*)$",
+      "dest": "client_portal/dist/$1"
+    },
+    {
+      "src": "^/(.*)$",
+      "dest": "client_portal/dist/index.html"
     }
   ]
 }
