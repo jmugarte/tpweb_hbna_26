@@ -18,20 +18,16 @@
       "dest": "backend_portal/wsgi.py"
     },
     {
-      "src": "^/admin/(.*)",
-      "dest": "backend_portal/wsgi.py"
-    },
-    {
       "src": "^/static/(.*)",
       "dest": "backend_portal/wsgi.py"
     },
     {
       "src": "^/(assets/.*|.*\\..*)$",
-      "dest": "client_portal/dist/$1"
+      "dest": "/$1"
     },
     {
       "src": "^/(.*)$",
-      "dest": "client_portal/dist/index.html"
+      "dest": "/index.html"
     }
   ]
 }
