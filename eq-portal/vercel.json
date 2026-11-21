@@ -22,12 +22,7 @@
       "dest": "backend_portal/wsgi.py"
     },
     {
-      "src": "^/assets/(.*)",
-      "dest": "client_portal/dist/assets/$1"
-    },
-    {
-      "src": "^/(.*\\..*)$",
-      "dest": "client_portal/dist/$1"
+      "handle": "filesystem"
     },
     {
       "src": "^/(.*)$",
