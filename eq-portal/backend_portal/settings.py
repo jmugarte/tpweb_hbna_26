@@ -14,7 +14,8 @@ load_dotenv(os.path.join(BASE_DIR, '.env'))
 SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-3fm%%w8758o%$**xz8fobm#ch9w&6&pshqtk*pk%0k+w+8)7d)')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG', 'False') == 'True'
+DEBUG = False
+# os.getenv('DEBUG', 'False') == 'True'
 
 # ALLOWED_HOSTS configurado dinámicamente:
 # Lee desde variable de entorno o usa fallback con subdominios de Vercel y localhost
