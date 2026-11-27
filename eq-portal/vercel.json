@@ -1,4 +1,5 @@
 {
+  "version": 2,
   "builds": [
     {
       "src": "backend_portal/wsgi.py",
@@ -22,10 +23,11 @@
       "dest": "backend_portal/wsgi.py"
     },
     {
-      "handle": "filesystem"
+      "src": "^/admin/(.*)",
+      "dest": "backend_portal/wsgi.py"
     },
     {
-      "src": "^/(.*)$",
+      "src": "^/(.*)",
       "dest": "client_portal/dist/index.html"
     }
   ]
