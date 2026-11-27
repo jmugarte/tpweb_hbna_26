@@ -8,26 +8,28 @@
     {
       "src": "client_portal/package.json",
       "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
+      "config": { "distDir": "dist" }
     }
   ],
   "routes": [
     {
-      "src": "^/api/(.*)",
+      "src": "/api/(.*)",
       "dest": "backend_portal/wsgi.py"
     },
     {
-      "src": "^/static/(.*)",
+      "src": "/admin/(.*)",
       "dest": "backend_portal/wsgi.py"
     },
     {
-      "src": "^/admin/(.*)",
+      "src": "/static/(.*)",
       "dest": "backend_portal/wsgi.py"
     },
     {
-      "src": "^/(.*)",
+      "src": "/assets/(.*)",
+      "dest": "client_portal/dist/assets/$1"
+    },
+    {
+      "src": "/(.*)",
       "dest": "client_portal/dist/index.html"
     }
   ]
